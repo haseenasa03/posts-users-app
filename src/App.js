@@ -39,7 +39,7 @@ const handlePosts= async () => {
 
   return (
     <>
-    <div className="container">
+      <div className="container">
         <h1 className="text-center">Post Users App</h1>
         <button className="btn btn-success" onClick={handlePosts}>
           Load Posts
@@ -47,16 +47,19 @@ const handlePosts= async () => {
         <div className="container">
           <div className="row">
             <div className="col-md-6">
-          {posts &&
-            posts.map((post) => (
-              <div className="card p-3 mt-2" key={post.userId}>
-                <p>{post.id}</p>
-                <p>{post.title}</p>
-                <p>{post.body}</p>
-              </div>
-            ))}
-           </div>
-<div className="col-md-6">
+             
+              {posts &&
+                posts.map((post) => (
+                  <div className="card p-3 mt-2" key={post.userId}>
+                    <p>{post.id}</p>
+                    <p>{post.title}</p>
+                    <p>{post.body}</p>
+                  </div>
+                ))}{" "}
+             
+            </div>
+            <div className="col-md-6">
+              <h3>USERS</h3>
               {users &&
                 users.map((user) => (
                   <div className="card p-3 mt-2" key={user.id}>
@@ -67,8 +70,8 @@ const handlePosts= async () => {
                 ))}
             </div>
           </div>
+        </div>
       </div>
-    </div>
     </>
   );
 }
